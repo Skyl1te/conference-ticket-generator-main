@@ -240,6 +240,7 @@ body {
   font-weight: 700;
   width: 100%;
   padding: 15px;
+  color: #25252b;
   border-radius: 10px;
 }
 .generate-btn:active {
