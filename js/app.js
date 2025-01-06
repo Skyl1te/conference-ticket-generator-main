@@ -100,7 +100,7 @@ fileInput.addEventListener('change', () => {
 			document.getElementById('uploaderPhoto').textContent = 'Image is too big.'
 			document.getElementById('uploaderPhoto').style.color = 'red'
 			fileInput.value = ''
-			loadedAvatar.src = '../assets/images/icon-upload.svg'
+			loadedAvatar.src = 'assets/images/icon-upload.svg'
 			return
 		}
 
@@ -109,7 +109,7 @@ fileInput.addEventListener('change', () => {
 			document.getElementById('uploaderPhoto').textContent = 'Invalid file extension.'
 			document.getElementById('uploaderPhoto').style.color = 'red'
 			fileInput.value = ''
-			loadedAvatar.src = '../assets/images/icon-upload.svg'
+			loadedAvatar.src = 'assets/images/icon-upload.svg'
 			return
 		}
 
@@ -128,7 +128,7 @@ changeImageButton.addEventListener('click', () => fileInput.click())
 
 deleteImageButton.addEventListener('click', () => {
 	fileInput.value = ''
-    loadedAvatar.src = '../assets/images/icon-upload.svg'
+    loadedAvatar.src = 'assets/images/icon-upload.svg'
 	loadedAvatar.style.width = '55px'
 	loadedAvatar.style.height = '55px'
     loadedAvatar.style.padding = '10px'
