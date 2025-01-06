@@ -29,6 +29,7 @@ body {
 }
 
 .wrapper {
+  position: relative;
   display: grid;
   flex-direction: column;
   place-content: center;
@@ -37,6 +38,33 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   color: aliceblue;
+  overflow: hidden;
+}
+
+.svg-image {
+  position: absolute;
+}
+.svg-image img {
+  width: 100%;
+}
+.svg-image:nth-child(1) {
+  width: 100%;
+}
+.svg-image:nth-child(2) {
+  top: 100px;
+  right: 0;
+}
+.svg-image:nth-child(3) {
+  left: 0;
+  bottom: 0;
+}
+.svg-image:nth-child(4) {
+  top: -100px;
+  left: 100px;
+}
+.svg-image:nth-child(5) {
+  top: 50%;
+  right: 350px;
 }
 
 .container {
@@ -124,6 +152,11 @@ body {
   color: var(--color-neutral-500);
   margin-top: 1.5rem;
   line-height: 1;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
 }
 
 .uploader {
@@ -296,4 +329,10 @@ body {
   right: 5px;
   top: 38%;
   transform: rotate(90deg);
+}
+
+.attribution {
+  padding: 10px;
+  font-size: 1.15rem;
+  z-index: 20;
 }

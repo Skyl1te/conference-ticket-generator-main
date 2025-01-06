@@ -91,19 +91,40 @@ function validateFunc() {
 
 fileInput.addEventListener('change', () => {
     const file = fileInput.files[0];
-    if (file) {
-    const reader = new FileReader();
-    reader.onload = (event) => {
-        loadedAvatar.src = event.target.result
+	document.getElementById('uploaderPhoto').textContent = 'Upload your photo (JPG or PNG, max size: 500KB).'
+	document.getElementById('uploaderPhoto').style.color = 'var(--color-neutral-0)'
+
+
+	if (file) {
+		if (file.size > 500 * 1024) {
+			document.getElementById('uploaderPhoto').textContent = 'Image is too big.'
+			document.getElementById('uploaderPhoto').style.color = 'red'
+			fileInput.value = ''
+			loadedAvatar.src = '../assets/images/icon-upload.svg'
+			return
+		}
+
+		const fileType = file.type
+		if (fileType !== 'image/png' && fileType !== 'image/jpeg') {
+			document.getElementById('uploaderPhoto').textContent = 'Invalid file extension.'
+			document.getElementById('uploaderPhoto').style.color = 'red'
+			fileInput.value = ''
+			loadedAvatar.src = '../assets/images/icon-upload.svg'
+			return
+		}
+
+		const reader = new FileReader()
+		reader.onload = (event) => {
+		loadedAvatar.src = event.target.result
 		loadedAvatar.style.padding = '0'
 		loadedAvatar.style.transform = 'scale(1.2)'
 		imageAction.style.display = 'flex'
-	};
-    reader.readAsDataURL(file);
+	}
+	reader.readAsDataURL(file);
 	}
 })
 
-changeImageButton.addEventListener('click', () => fileInput.click());
+changeImageButton.addEventListener('click', () => fileInput.click())
 
 deleteImageButton.addEventListener('click', () => {
 	fileInput.value = ''
